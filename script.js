@@ -50,21 +50,10 @@ let cardWidth = 0;
 let cardsVisible = 4;
 let maxPosition = 0;
 
-function calculateDimensions() {
+function calc() {
     const cards = document.querySelectorAll('.testimonial-card');
     if (cards.length > 0) {
         cardWidth = cards[0].offsetWidth + 25;
-        
-        if (window.innerWidth > 1200) {
-            cardsVisible = 4;
-        } else if (window.innerWidth > 768) {
-            cardsVisible = 3;
-        } else if (window.innerWidth > 480) {
-            cardsVisible = 2;
-        } else {
-            cardsVisible = 1;
-        }
-        
         maxPosition = cards.length - cardsVisible;
     }
 }
@@ -83,7 +72,7 @@ function updateButtons() {
     }
 }
 
-function moveCarousel(direction) {
+function move(direction) {
     currentPosition += direction;
     
     if (currentPosition < 0) {
@@ -101,19 +90,19 @@ function moveCarousel(direction) {
 }
 
 prevBtn.addEventListener('click', function() {
-    moveCarousel(-1);
+    move(-1);
 });
 
 nextBtn.addEventListener('click', function() {
-    moveCarousel(1);
+    move(1);
 });
 
 window.addEventListener('resize', function() {
-    calculateDimensions();
+    calc();
     currentPosition = 0;
     track.style.transform = 'translateX(0)';
     updateButtons();
 });
 
-calculateDimensions();
+calc();
 updateButtons();
