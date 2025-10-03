@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Source Sans 3", sans-serif;
+    color: white;
+    background-color: #1A1A1A;
+}
+
+section {
+    background-color: #1A1A1A;
+}
+
+.ad-bg::after{
+    background-color: #1A1A1A;
+    overflow: hidden;
+    height: 100vh;
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 450px;
+    height: 400px;
+    background: radial-gradient(
+                circle at bottom right,
+                rgba(95, 48, 248, 0.6) 0%,
+                rgba(252, 136, 103, 0.5) 70%, 
+                transparent 100%);
+    filter: blur(80px);
+    z-index: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 60px;
+    margin-top: 20px;
+}
+
+.kanan h1 {
+    font-size: 48px;
+    font-weight: bold;
+    background: linear-gradient(to right, #5F30F8, #FC8867);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0px;
+}
+
+.kanan p {
+    line-height: 1.6;
+    color: darkgrey;
+    max-width: 450px;
+}
+
+.kiri {
+    display: flex;
+    gap: 15px;
+}
+
+.buton {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #2D272A;
+    border: 1px solid #2D272A;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.buton:hover {
+    background-color:  rgba(43,39,41, 0.7);
+}
+
+.buton:active {
+    transform: scale(0.9);
+}
+
+.card-wrap {
+    overflow: hidden;
+    position: relative;
+}
+
+.track {
+    display: flex;
+    gap: 25px;
+    transition: transform 0.5s ease;
+}
+
+.testimonial-card {
+    min-width: calc(23% - 10px);
+    background: rgba(33,33,33, 0.6) ;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(33,33,33, 0.6) ;
+    border-radius: 20px;
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.testimonial-text {
+    color: #cbd5e0;
+    line-height: 1.7;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.star_isi{
+    color: #f6e05e;
+    font-size: 18px;
+}
+
+.star_kosong{
+    color: grey;
+    font-size: 18px;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding-top: 25px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.profile-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 3px;
+    color: white;
+}
+
+.profile-info p {
+    color: #a0aec0;
+    font-size: 0.85rem;
+}
