@@ -45,27 +45,27 @@ testikartu.forEach(function(t) {
     track.innerHTML += cardHTML;
 });
 
-let currentPosition = 0;
+let curPost = 0;
 let cardWidth = 0;
 let cardsVisible = 4;
-let maxPosition = 0;
+let maxPost = 0;
 
 function calc() {
     const cards = document.querySelectorAll('.testimonial-card');
     if (cards.length > 0) {
         cardWidth = cards[0].offsetWidth + 25;
-        maxPosition = cards.length - cardsVisible;
+        maxPost = cards.length - cardsVisible;
     }
 }
 
 function updateButtons() {
-    if (currentPosition <= 0) {
+    if (curPost <= 0) {
         prevBtn.disabled = true;
     } else {
         prevBtn.disabled = false;
     }
     
-    if (currentPosition >= maxPosition) {
+    if (curPost >= maxPost) {
         nextBtn.disabled = true;
     } else {
         nextBtn.disabled = false;
@@ -73,18 +73,18 @@ function updateButtons() {
 }
 
 function move(direction) {
-    currentPosition += direction;
+    curPost += direction;
     
-    if (currentPosition < 0) {
-        currentPosition = 0;
+    if (curPost < 0) {
+        curPost = 0;
     }
-    if (currentPosition > maxPosition) {
-        currentPosition = maxPosition;
+    if (curPost > maxPost) {
+        curPost = maxPost;
     }
     
-    const moveDistance = -(currentPosition * cardWidth);
+    const distance = -(curPost * cardWidth);
     
-    track.style.transform = `translateX(${moveDistance}px)`;
+    track.style.transform = `translateX(${distance}px)`;
     
     updateButtons();
 }
@@ -99,10 +99,11 @@ nextBtn.addEventListener('click', function() {
 
 window.addEventListener('resize', function() {
     calc();
-    currentPosition = 0;
+    curPost = 0;
     track.style.transform = 'translateX(0)';
     updateButtons();
 });
 
 calc();
 updateButtons();
+
