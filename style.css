@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: "Source Sans 3", sans-serif;
+    font-family: "Poppins", sans-serif;
     color: white;
     background-color: #1A1A1A;
 }
@@ -150,4 +150,5 @@ nav {
 .profile-info p {
     color: #a0aec0;
     font-size: 0.85rem;
+
 }
